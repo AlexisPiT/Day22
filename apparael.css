@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&family=Lexend+Deca:wght@100..900&family=Manrope:wght@200..800&family=Nanum+Gothic+Coding&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
+
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 1fr;
+
+}
+.content_info{
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    background-image: url(Images/bg-pattern-desktop.svg), linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    background-size: cover;
+    gap: 1.5em;
+    font-family: 'Josefin Sans';
+}
+.logo{
+    height: 2.3rem;
+    width: 50%;
+}
+h1{
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: hsl(0, 6%, 24%);
+    letter-spacing: 1.1rem;
+    line-height: 4.2rem;
+}
+span{
+    font-weight: 300;
+    color: hsl(0, 36%, 70%);
+}
+p{
+    color: hsl(0, 36%, 70%);
+    line-height: 1.8rem;
+    font-weight: 400;
+}
+.input{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 3.2rem;
+    margin-top: 2rem;
+}
+.input_email{
+    border-color: hsl(0, 36%, 70%);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 25px;
+    width: 100%;
+    padding: 1.5rem;
+    background-color: transparent;
+}
+.error{
+    position: absolute;
+    width: 3.5rem;
+    height: 3.5rem;
+    right: 25%;
+    display: none;
+}
+.error_icon{
+    background-image: url(Images/icon-error.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+.error-msg{
+    display: none;
+    position: absolute;
+    top: 130%;
+    left: 5%;
+    font-size: 0.8rem;
+}
+.btn{
+    cursor: pointer;
+    background: linear-gradient(135deg, hsl(0,80%, 86%), hsl(0, 74%, 74%));
+    width: 4rem;
+    height: 3.2rem;
+    border: transparent;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -57px;
+}
+.btn:hover{
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+.arrow-img{
+    background-image: url(Images/icon-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 2rem;
+    height: 2rem;
+    margin: auto;
+}
+.content_img{
+    background-image: url(Images/hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+@media screen and (min-width: 375px) and (max-width: 850px) {
+
+    .container{
+        height: auto;
+        width: 400px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 15% 50% 1fr;
+        grid-template-areas: "icon" "hero" "info";
+    }
+
+    .content_img{
+        grid-area: hero;
+        background-image: url(Images/hero-mobile.jpg);
+    }
+
+    .logo{
+        grid-area: icon;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+    }
+
+    .content_info{
+        grid-area: info;
+        width: 100%;
+        padding: 0.4rem;
+    }
+}
